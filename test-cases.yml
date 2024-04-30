@@ -1,0 +1,34 @@
+---
+- summary: |
+    Проверка возможности зарегистрироваться с использованием почты
+  requirement: |
+    При вводе уникального логина, почты, пароля и повтора пароля происходит регистрация пользователя
+  prerequisites: |
+    Открыта страница регистрации Sign up
+  test-data: |
+    Nickname = fretka Email = potemkina.qa@gmail.com  Password = 123456 Password confirmation = 123456
+  steps:
+    - Вводим nickname
+    - Вводим email
+    - Вводим password
+    - Подтверждаем пароль
+    - Нажимаем кнопку "Submit"
+  expected-result: |
+    Пользователь должен попасть на главную страницу под своим аккаунтом
+
+- summary: |
+    Проверка возможности повторно зарегистрироваться с использованием почты (негативный ТК)
+  requirement: |
+    При повторном использовании почты при регистрации, пользователь должен получить сообщение об ошибке
+  prerequisites:
+    Открыта страница регистрации Sign up
+  test-data: |
+    Nickname = fretka2 Email = potemkina.qa@gmail.com  Password = 1234567 Password confirmation = 1234567
+  steps:
+    - Вводим nickname
+    - Вводим email
+    - Вводим password
+    - Подтверждаем пароль
+    - Нажимаем кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение об ошибке, что такой Email уже используется

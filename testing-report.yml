@@ -24,7 +24,7 @@
   status: fail
 
 - summary: |
-    Проверка авторизации пользователя с использованием аккаунта на Github, Discord
+    Проверка авторизации пользователя с использованием аккаунта на Github,Discord
   status: pass
 
 - summary: |
